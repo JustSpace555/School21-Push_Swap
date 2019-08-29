@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:16:06 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/06 19:37:33 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/29 17:42:44 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	print_vis_stacks(int k, char *command)
 						ft_count_amount_digits(find_min_data(g_vis_stack_a));
 	else
 		amount_spaces_before = 0;
-	max_stack_size = ft_max_int(g_vis_stack_a->size, g_vis_stack_b->size);
+	max_stack_size = MAX(g_vis_stack_a->size, g_vis_stack_b->size);
 	while (++i < max_stack_size)
 	{
 		if (g_vis_stack_a->array[i].index != 0)

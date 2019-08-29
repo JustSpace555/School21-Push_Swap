@@ -6,14 +6,14 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 19:15:42 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/04 22:55:03 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/08/29 17:38:49 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_FUNCTIONS_H
 # define PUSH_SWAP_FUNCTIONS_H
 
-# include "../libft/libft.h"
+# include "../libft/Headers/libft.h"
 
 typedef struct	s_vector
 {
