@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+         #
+#    By: space <space@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/03 19:16:23 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/06 19:41:57 by qmebble          ###   ########.fr        #
+#    Updated: 2019/09/01 17:07:23 by space            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,25 +28,18 @@ EXECUTABLE = checker
 FLAGS = -Wall -Wextra -Werror
 LIB = libft.a
 
-all: $(LIB)
+all:
 	@echo Compiling Checker...
 	@gcc $(FLAGS) $(SRCS) $(SRCS_PS) ../libft.a -I $(INCLUDE) -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 
-
-$(LIB):
-	@echo Compiling libft...
-	@make -C ../libft/
-
-new:
+new: fclean
 	@echo Recompiling Checker...
-	@rm -rf ../$(EXECUTABLE)*
 	@gcc $(FLAGS) $(SRCS) $(SRCS_PS) ../libft.a -I $(INCLUDE) -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 
-debug:
+debug: fclean
 	@echo Recompiling Checker...
-	@rm -rf ../$(EXECUTABLE)*
 	@gcc -g $(FLAGS) $(SRCS) $(SRCS_PS) ../libft.a -I $(INCLUDE) -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 	@mv $(EXECUTABLE).* ..

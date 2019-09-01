@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+         #
+#    By: space <space@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/03 19:15:31 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/06 19:42:05 by qmebble          ###   ########.fr        #
+#    Updated: 2019/09/01 17:07:57 by space            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,39 +26,29 @@ SRCS =	main.c \
 INCLUDE = push_swap_funstions.h
 FLAGS = -Wall -Wextra -Werror
 EXECUTABLE = push_swap
-LIB = libft.a
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(LIB)
+$(EXECUTABLE):
 	@echo Compiling Push_Swap...
 	@gcc $(FLAGS) $(SRCS) ../libft.a -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 
-
-$(LIB):
-	@echo Compiling libft...
-	@make -C ../libft/
-
-new:
+new: fclean
 	@echo Recompiling Push_Swap...
-	@rm -rf ../$(EXECUTABLE)*
 	@gcc $(FLAGS) $(SRCS) ../libft.a -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 
-debug:
+debug: fclean
 	@echo Recompiling Push_Swap...
-	@rm -rf ../$(EXECUTABLE)*
 	@gcc -g $(FLAGS) $(SRCS) ../libft.a -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 	@mv $(EXECUTABLE).* ..
 
 clean:
 	@rm -rf *.o
-	@make -C ../libft clean
 
 fclean: clean
 	@rm -rf ../$(EXECUTABLE)*
-	@make -C ../libft fclean
 
 re: fclean all
