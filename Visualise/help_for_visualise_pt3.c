@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:16:06 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/29 17:42:44 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/09/08 20:36:03 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_stack_b_after_a(int indents_for_b, int k, int i)
 	int	j;
 	int	amount_spaces;
 
-	amount_spaces = ft_count_amount_digits(find_max_data(g_vis_stack_b));
+	amount_spaces = ft_count_amount_characters(find_max_data(g_vis_stack_b));
 	j = -1;
 	while (++j < 100 - indents_for_b)
 		write(1, " ", 1);
@@ -65,7 +65,7 @@ int		print_stack_a_before_b(int amount_spaces_before,
 {
 	int	j;
 
-	j = ft_count_amount_digits(g_vis_stack_a->array[i].data) - 1;
+	j = ft_count_amount_characters(g_vis_stack_a->array[i].data) - 1;
 	if (g_vis_stack_a->array[i].data >= -9)
 		while (++j < amount_spaces_before)
 			write(1, " ", 1);
