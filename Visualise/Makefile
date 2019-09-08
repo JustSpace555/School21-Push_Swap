@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+         #
+#    By: space <space@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/04 22:58:29 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/06 19:42:10 by qmebble          ###   ########.fr        #
+#    Updated: 2019/09/01 17:08:47 by space            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,36 +27,27 @@ SRCS_PS =	../P_S/help_for_sort_pt1.c \
 INCLUDE = visualise.h
 FLAGS = -Wall -Wextra -Werror
 EXECUTABLE = visualisator
-LIB = libft.a
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(LIB)
+$(EXECUTABLE):
 	@echo Compiling Visualisator...
 	@gcc $(FLAGS) $(SRCS) $(SRCS_PS) ../libft.a -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 
-$(LIB):
-	@echo Compiling libft...
-	@make -C ../libft/
-
-new:
+new: fclean
 	@echo Recompiling Visualisator...
-	@rm -rf ../$(EXECUTABLE)*
 	@gcc $(FLAGS) $(SRCS) $(SRCS_PS) ../libft.a -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 
-debug:
+debug: fclean
 	@echo Recompiling Visualisator...
-	@rm -rf ../$(EXECUTABLE)*
 	@gcc -g $(FLAGS) $(SRCS) $(SRCS_PS) ../libft.a -o $(EXECUTABLE)
 	@mv $(EXECUTABLE) ..
 	@mv $(EXECUTABLE).* ..
 
 clean:
 	@rm -rf *.o
-	@make -C ../libft clean
 
 fclean: clean
 	@rm -rf ../$(EXECUTABLE)*
-	@make -C ../libft fclean

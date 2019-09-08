@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+         #
+#    By: space <space@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/03 19:16:01 by qmebble           #+#    #+#              #
-#    Updated: 2019/08/06 19:41:28 by qmebble          ###   ########.fr        #
+#    Updated: 2019/09/01 17:06:07 by space            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all:
 	@echo Powered by; cat author
+	@make -C ./libft/
 	@make -C ./Check/
 	@make -C ./P_S/
 	@make -C ./Visualise
-	@make -C ./libft/
 
 checker:
 	@make -C ./Check
@@ -49,7 +49,7 @@ clean:
 	@make -C ./Visualise/ clean
 
 fclean:
-	@rm -rf libft.a push_swap checker
+	@rm -rf push_swap checker
 	@make -C ./Check/ fclean
 	@make -C ./P_S/ fclean
 	@make -C ./libft/ fclean

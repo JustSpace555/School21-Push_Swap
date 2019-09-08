@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:16:06 by qmebble           #+#    #+#             */
-/*   Updated: 2019/09/08 20:36:03 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/09/08 20:37:39 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ void	print_stack_b_after_a(int indents_for_b, int k, int i)
 {
 	int	j;
 	int	amount_spaces;
+	int	temp;
 
-	amount_spaces = ft_count_amount_characters(find_max_data(g_vis_stack_b));
+	temp = find_max_data(g_vis_stack_b);
+	amount_spaces = ft_count_amount_characters(&temp, "int");
 	j = -1;
 	while (++j < 100 - indents_for_b)
 		write(1, " ", 1);
@@ -65,12 +67,12 @@ int		print_stack_a_before_b(int amount_spaces_before,
 {
 	int	j;
 
-	j = ft_count_amount_characters(g_vis_stack_a->array[i].data) - 1;
+	j = ft_count_amount_characters(&(g_vis_stack_a->array[i].data), "int") - 1;
 	if (g_vis_stack_a->array[i].data >= -9)
 		while (++j < amount_spaces_before)
 			write(1, " ", 1);
 	ft_printf("%d ", g_vis_stack_a->array[i].data);
-	indents_for_b = ft_count_amount_digits(g_vis_stack_a->array[i].data) + 1;
+	indents_for_b = ft_count_amount_characters(&(g_vis_stack_a->array[i].data), "int") + 1;
 	j = -1;
 	while (++j < g_vis_stack_a->array[i].index / k)
 		if (g_vis_stack_a->array[i].for_what_changing)
@@ -92,12 +94,13 @@ void	print_vis_stacks(int k, char *command)
 	int	max_stack_size;
 	int	amount_spaces_before;
 	int	indents_for_b;
+	int	temp;
 
 	i = -1;
 	indents_for_b = 0;
-	if (find_min_data(g_vis_stack_a) < 0)
-		amount_spaces_before =
-						ft_count_amount_digits(find_min_data(g_vis_stack_a));
+	temp = find_min_data(g_vis_stack_a);
+	if (temp < 0)
+		amount_spaces_before = ft_count_amount_characters(&temp, "int");
 	else
 		amount_spaces_before = 0;
 	max_stack_size = MAX(g_vis_stack_a->size, g_vis_stack_b->size);
