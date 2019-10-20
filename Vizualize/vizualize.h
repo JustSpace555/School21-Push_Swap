@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   visualise.h                                        :+:      :+:    :+:   */
+/*   vizualize.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 22:22:37 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/06 19:11:31 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:06:42 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VISUALISE_H
-# define VISUALISE_H
+#ifndef VIZUALIZE_H
+# define VIZUALIZE_H
 
 # include "../P_S/push_swap_functions.h"
 # include "../Check/checker_functions.h"

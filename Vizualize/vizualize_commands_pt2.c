@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   visualise_commands_pt2.c                           :+:      :+:    :+:   */
+/*   vizualize_commands_pt2.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 23:12:49 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/06 18:16:03 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:04:49 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "visualise.h"
+#include "vizualize.h"
 
 void	reverse_rotate_vis(t_vis_array *stack)
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help_for_visualise_pt2.c                           :+:      :+:    :+:   */
+/*   help_for_vizualize_pt2.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 18:57:02 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/06 19:36:04 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:05:37 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "visualise.h"
+#include "vizualize.h"
 
 void		make_vis_stack_a(int *temp)
 {

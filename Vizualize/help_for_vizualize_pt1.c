@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help_for_visualise.c                               :+:      :+:    :+:   */
+/*   help_for_vizualize_pt1.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 23:25:48 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/06 16:20:25 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:05:33 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "visualise.h"
+#include "vizualize.h"
 
 int		find_max_data(t_vis_array *stack)
 {

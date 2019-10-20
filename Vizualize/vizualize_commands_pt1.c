@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   visualise_commands_pt1.c                           :+:      :+:    :+:   */
+/*   vizualize_commands_pt1.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 22:36:27 by qmebble           #+#    #+#             */
-/*   Updated: 2019/08/06 19:34:19 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:04:43 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "visualise.h"
+#include "vizualize.h"
 
 void	swap_vis(t_vis_array *stack)
 {
