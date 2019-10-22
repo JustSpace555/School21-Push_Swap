@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 22:23:32 by qmebble           #+#    #+#             */
-/*   Updated: 2019/10/20 20:07:13 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/22 20:33:14 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int		main(int argc, char **argv)
 		system("clear");
 		write(1, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", 20);
 		print_vis_stacks(k, command);
-		system("sleep 0.1");
+		system("sleep 0.05");
 		free(command);
 	}
 	system("clear");

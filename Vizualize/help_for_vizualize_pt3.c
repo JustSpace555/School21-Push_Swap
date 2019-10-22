@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help_for_visualise_pt3.c                           :+:      :+:    :+:   */
+/*   help_for_vizualize_pt3.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:16:06 by qmebble           #+#    #+#             */
-/*   Updated: 2019/10/20 20:05:02 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/22 20:30:19 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,9 @@ void	print_stack_b_after_a(int indents_for_b, int k, int i)
 	temp = find_max_data(g_vis_stack_b);
 	amount_spaces = ft_count_amount_characters(&temp, "int");
 	j = -1;
-	while (++j < 100 - indents_for_b)
+	while (++j < (int)(100 - indents_for_b - ft_count_amount_characters(&g_vis_stack_a->array[i].data, "int")))
 		write(1, " ", 1);
-	ft_printf("%d", g_vis_stack_b->array[i].data);
-	j = -1;
-	if (g_vis_stack_b->array[i].data < 0)
-		j++;
-	while (++j < amount_spaces)
-		write(1, " ", 1);
+	ft_printf("%4d ", g_vis_stack_b->array[i].data);
 	j = -1;
 	while (++j < g_vis_stack_b->array[i].index / k)
 	{
@@ -62,13 +57,12 @@ void	print_stack_b_after_a(int indents_for_b, int k, int i)
 	g_vis_stack_b->array[i].for_what_changing = 0;
 }
 
-int		print_stack_a_before_b(int indents_for_b, int i, int k)
+void	print_stack_a_before_b(int *indents_for_b, int i, int k)
 {
 	int	j;
 
-	j = ft_count_amount_characters(&(g_vis_stack_a->array[i].data), "int") - 1;
 	ft_printf("%4d ", g_vis_stack_a->array[i].data);
-	indents_for_b = ft_count_amount_characters(&(g_vis_stack_a->array[i].data), "int") + 1;
+	*indents_for_b = 5 - ft_count_amount_characters(&(g_vis_stack_a->array[i].data), "int");
 	j = -1;
 	while (++j < g_vis_stack_a->array[i].index / k)
 		if (g_vis_stack_a->array[i].for_what_changing)
@@ -78,10 +72,9 @@ int		print_stack_a_before_b(int indents_for_b, int i, int k)
 			ft_printf("%{green}s", "-");
 		else
 			write(1, "-", 1);
-	indents_for_b += j - 1;
+	*indents_for_b += j;
 	g_vis_stack_a->array[i].if_changing = 0;
 	g_vis_stack_a->array[i].for_what_changing = 0;
-	return (indents_for_b);
 }
 
 void	print_vis_stacks(int k, char *command)
@@ -96,7 +89,7 @@ void	print_vis_stacks(int k, char *command)
 	while (++i < max_stack_size)
 	{
 		if (g_vis_stack_a->array[i].index != 0)
-			indents_for_b = print_stack_a_before_b(indents_for_b, i, k);
+			print_stack_a_before_b(&indents_for_b, i, k);
 		if (g_vis_stack_b->array[i].index != 0)
 			print_stack_b_after_a(indents_for_b, k, i);
 		write(1, "\n", 1);
