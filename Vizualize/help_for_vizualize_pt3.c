@@ -6,7 +6,7 @@
 /*   By: qmebble <qmebble@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:16:06 by qmebble           #+#    #+#             */
-/*   Updated: 2019/10/22 20:30:19 by qmebble          ###   ########.fr       */
+/*   Updated: 2019/10/22 20:54:26 by qmebble          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	print_stack_b_after_a(int indents_for_b, int k, int i)
 	temp = find_max_data(g_vis_stack_b);
 	amount_spaces = ft_count_amount_characters(&temp, "int");
 	j = -1;
-	while (++j < (int)(100 - indents_for_b - ft_count_amount_characters(&g_vis_stack_a->array[i].data, "int")))
+	while (++j < (int)(100 - indents_for_b -
+			ft_count_amount_characters(&g_vis_stack_a->array[i].data, "int")))
 		write(1, " ", 1);
 	ft_printf("%4d ", g_vis_stack_b->array[i].data);
 	j = -1;
@@ -62,7 +63,8 @@ void	print_stack_a_before_b(int *indents_for_b, int i, int k)
 	int	j;
 
 	ft_printf("%4d ", g_vis_stack_a->array[i].data);
-	*indents_for_b = 5 - ft_count_amount_characters(&(g_vis_stack_a->array[i].data), "int");
+	*indents_for_b = 5 - ft_count_amount_characters(
+			&(g_vis_stack_a->array[i].data), "int");
 	j = -1;
 	while (++j < g_vis_stack_a->array[i].index / k)
 		if (g_vis_stack_a->array[i].for_what_changing)
